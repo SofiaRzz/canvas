@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")
+
+        var x = 20
+        var y = 100
+        var raio = 10
+
+        requestAnimationFrame(mexerBola)
+        function mexerBola(){
+            context.clearRect(0, 0, canvas.width, canvas.height)
+            context.beginPath()
+            context.arc(x, y, raio, 0,  Math.PI*2)
+            context.fill()
+            x += 5
+            y += 5
+            requestAnimationFrame(mexerBola)
+
+        }
+    </script>
+</body>
+</html>
